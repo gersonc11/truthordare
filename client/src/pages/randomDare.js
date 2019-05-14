@@ -1,0 +1,1 @@
+// load random dare on page after choosing which route to go to
