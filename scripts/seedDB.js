@@ -6,7 +6,7 @@ const db = require("../models");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/reactdares"
+    "mongodb://localhost:27017/reactdares"
 );
 
 
