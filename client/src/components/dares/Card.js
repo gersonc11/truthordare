@@ -16,9 +16,6 @@ function Card(props) {
           <li>
             <strong>Details:</strong> {props.details}
           </li>
-          <li>
-            <strong>Id:</strong> {props.id}
-          </li>
         </ul>
       </div>
     </div>

@@ -8,62 +8,78 @@ import React, { Component } from 'react';
 import Button from '../components/form/Button';
 import Input from '../components/form/Input';
 import { Col, Row } from 'reactstrap';
+import API from '../utils/API';
+import {withRouter} from 'react-router-dom';
+import { Link, Router, Route } from 'react-router-dom'
 
 
 class CreateDare extends Component {
     state = {
-        newForm: {
-            type: '',
-            author: '',
-            details: ''
-
-        }
+        type: '',
+        author: '',
+        details: ''
     }
 
-    handleInput(e) {
+    handleInput = (e) => {
+        e.preventDefault();
         let target = e.target;
         let value = target.value;
         let name = target.name;
         this.setState({
-            [name]:value
-        })
+            [name]: value
+        }, () => console.log(this.state))
     }
+
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+        const dare = this.state
+
+        API.saveDare({
+            type: dare.type,
+            author: dare.author,
+            details: dare.details
+        })
+            .then(() => this.nextPath('/play'))
+    };
+
+    nextPath = (path) => {
+        this.props.history.push(path);
+      }
 
     render() {
         return (
             <div>
+                <h1>Create</h1>
                 <form className="container" onSubmit={this.handleSubmit}>
-                <Row>
+                    <Button
+                        name="type"
+                        value="truth"
+                        onClick={this.handleInput}
+                        title="Truth"
+                    />
+                    <Button
+                        name="type"
+                        value="dare"
+                        onClick={this.handleInput}
+                        title="Dare"
+                    />
+                    <Input
+                        name="author"
+                        type="text"
+                        value={this.state.author}
+                        handleChange={this.handleInput}
+                        placeholder="Enter Your Name" />
+                    <Input
+                        name="details"
+                        type="text"
+                        value={this.state.details}
+                        handleChange={this.handleInput}
+                        placeholder="Enter Your Text" />
 
                     <Button
-                    name="type"
-                    value="truth"
-                    onClick=""
-                    title="Truth"
+                        title={"Submit"}
+                        onClick={this.handleFormSubmit}
                     />
-                    <Button
-                    name="type"
-                    value="dare"
-                    onClick=""
-                    title="Dare"
-                    />
-                    </Row>
-                    <Input
-                    name="author"
-                    type="text"
-                    value={this.state.newForm.author}
-                    // handleInput={}
-                    placeholder="Enter Your Name"/>
-                    <Input
-                    name="details"
-                    type="text"
-                    value={this.state.newForm.details}
-                    placeholder="Enter Your Text"/>
-                    <Button
-                    title={"Submit"}
-                    onClick={this.handleSubmit}
-                    />
-
                 </form>
 
             </div>
@@ -71,4 +87,4 @@ class CreateDare extends Component {
     }
 }
 
-export default CreateDare;
+export default withRouter(CreateDare);
