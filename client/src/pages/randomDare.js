@@ -13,7 +13,7 @@ class RandomDare extends Component {
   };
 
   async componentDidMount() {
-    const url = "http://localhost:3001/api/dares";
+    const url = "/api/dares";
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
