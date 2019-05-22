@@ -53,13 +53,13 @@ class CreateDare extends Component {
         <form className="container" onSubmit={this.handleSubmit}>
           <Button
             name="type"
-            value="truth"
+            value="Truth"
             onClick={this.handleInput}
             title="Truth"
           />
           <Button
             name="type"
-            value="dare"
+            value="Dare"
             onClick={this.handleInput}
             title="Dare"
           />
