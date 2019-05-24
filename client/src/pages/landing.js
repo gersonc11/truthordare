@@ -1,7 +1,10 @@
 //initial landing page
 import React from 'react';
-import Button from '../components/form/Button';
 import { Link } from "react-router-dom";
+import "./assets/css/Page.css";
+import body from "./assets/imgs/body_landing.jpg";
+import play from "./assets/imgs/play.png";
+import create from "./assets/imgs/create.png";
 
 
 
@@ -13,21 +16,14 @@ let Home = () => {
     
     return (
         <div>
-
-            <h1>Truth Or Dare</h1>
+    <img src={body} className="body" alt="body" />        
+<br></br>
             <Link to="/play">
-            <Button
-                title="Play"
-                onClick={wow}
-                />
-                </Link>
+            <img src={play} className="play" alt="play" />   
+            </Link>
+
                 <Link to="/create">
-            <Button
-                name=""
-                value=""
-                title="Create"
-                onClick={wow}
-                />
+                <img src={create} className="create" alt="create" />   
                 </Link>
         </div>
     )

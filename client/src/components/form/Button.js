@@ -1,7 +1,12 @@
 import React from 'react';
 
 var buttonStyle = {
-    margin: '10px 10px 10px 0'
+    margin: '30px 30px 30px 30px',
+    color: '#f34700',
+    backgroundcolor: "#ffffff",
+    padding: '10px 20px 10px 20px',
+    fontsize: '24px',
+    fontfamily: 'monospace'
   };
 
 /*Button.jsx */
