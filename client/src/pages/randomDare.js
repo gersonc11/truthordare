@@ -1,12 +1,16 @@
 // load random dare on page after choosing which route to go to
 import React, { Component } from "react";
 import Button from "../components/form/Button";
+import "./assets/css/Page.css";
+import pickone from "./assets/imgs/pickone.png";
+
+
 
 class RandomDare extends Component {
   state = {
     truths: [],
     dares: [],
-    Choosen: { details: "Pick Truth or Dare" },
+    Choosen: { details: <img src={pickone} className="pickone" alt="pickone" /> },
     // dare: null,
     loading: false,
     loadTruths: false
@@ -54,7 +58,6 @@ class RandomDare extends Component {
 
   loadTruths = () => {
     const amountOfTruths = this.state.truths.length;
-
     const randomIndex = this.getRandomInt(0, amountOfTruths - 1);
 
     console.log(`Truth Random Index: ${randomIndex}`);
@@ -73,8 +76,8 @@ class RandomDare extends Component {
     console.log(this.state);
     return (
       <div>
-        <Button title="Truth" value="Truth" onClick={this.loadTruths} />
-        <Button title="Dare" value="Dare" onClick={this.loadDares} />
+        <Button title="TRUTH" value="Truth" onClick={this.loadTruths} />
+        <Button title="DARE" value="Dare" onClick={this.loadDares} />
         <div>
           <p>{this.state.Choosen.details}</p>
         </div>

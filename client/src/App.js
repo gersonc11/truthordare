@@ -4,31 +4,15 @@ import "./App.css";
 import Home from "./pages/landing";
 import CreateDare from "./pages/createDare";
 import RandomDare from "./pages/randomDare";
+import logo from "./logo.png";
+
 
 class App extends Component {
-  // state = {
-  //   currentPage: "Home"
-  // };
-
-  // handlePageChange = page => {
-  //   this.setState({ currentPage: page });
-  // };
-
-  // renderPage = () => {
-  //   if (this.state.currentPage === "Home") {
-  //     return <Home
-  //       handlePageChange={this.handlePageChange} />;
-  //   } else if (this.state.currentPage === "CreateDare") {
-  //     return <CreateDare />;
-  //   } else {
-  //     return <RandomDare />;
-  //   }
-  // };
-
   render() {
     return (
-      <div className="App">
-        <Router>
+          <div className="App">
+              <img src={logo} className="App-logo" alt="logo" />        
+              <Router>
           <div>
             <Switch>
               <Route exact path="/" component={Home} />

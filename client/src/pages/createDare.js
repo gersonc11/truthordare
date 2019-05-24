@@ -7,9 +7,15 @@
 import React, { Component } from "react";
 import Button from "../components/form/Button";
 import Input from "../components/form/Input";
-import { Col, Row } from "reactstrap";
 import API from "../utils/API";
 import { withRouter } from "react-router-dom";
+import create from "./assets/imgs/create.png";
+import "./assets/css/Page.css";
+
+
+
+
+
 
 class CreateDare extends Component {
   state = {
@@ -49,36 +55,39 @@ class CreateDare extends Component {
   render() {
     return (
       <div>
-        <h1>Create</h1>
+      <img src={create} className="Page-create" alt="create" />        
         <form className="container" onSubmit={this.handleSubmit}>
-          <Button
+ 
+ <Button
             name="type"
             value="Truth"
             onClick={this.handleInput}
-            title="Truth"
-          />
+            title="TRUTH"
+          />         
+
           <Button
             name="type"
             value="Dare"
             onClick={this.handleInput}
-            title="Dare"
+            title="DARE"
           />
+
           <Input
             name="author"
             type="text"
             value={this.state.author}
             handleChange={this.handleInput}
-            placeholder="Enter Your Name"
+            placeholder="enter your name"
           />
           <Input
             name="details"
             type="text"
             value={this.state.details}
             handleChange={this.handleInput}
-            placeholder="Enter Your Text"
+            placeholder="enter your text"
           />
 
-          <Button title={"Submit"} onClick={this.handleFormSubmit} />
+          <Button title={"SUBMIT"} onClick={this.handleFormSubmit} />
         </form>
       </div>
     );

@@ -1,0 +1,57 @@
+.Page-create {
+padding-top: 10px;
+padding-bottom: 20px;
+height: 65px;
+}
+
+.Button {
+  color: #ff85f8;
+}
+
+.body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 50%;
+  }
+
+  .play {
+    padding-top: 30px;
+    padding-right: 15px;
+    width: 14%
+    }
+
+    .create {
+      padding-top: 30px;
+      padding-left: 15px;
+      width: 20%
+    }
+
+    .truth {
+      padding-top: 30px;
+      padding-left: 15px;
+      width: 20%
+    }
+
+    .dare {
+      padding-top: 30px;
+      padding-left: 15px;
+      width: 20%
+    }
+
+    .submit {
+      padding-top: 30px;
+      padding-left: 15px;
+      width: 20%
+    }
+
+    .Input {
+      font-family: Roboto;
+      font-size: 20px;
+      
+    }
+
+    .pickone {
+      padding-top: 10px;
+      width: 22%
+    }
+    
